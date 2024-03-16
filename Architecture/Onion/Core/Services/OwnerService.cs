@@ -1,4 +1,7 @@
-﻿using Services.Abstractions;
+﻿using Contracts;
+using Domain.Entities;
+using Domain.Exceptions;
+using Services.Abstractions;
 
 namespace Services;
 

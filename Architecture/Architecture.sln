@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistence", "Onion\Infras
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentation", "Onion\Infrastructure\Presentation\Presentation.csproj", "{6F9052AE-94A7-483A-ADA4-4CECA0989FF1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi", "Onion\WebApi\WebApi.csproj", "{DCEB59C3-9842-49E8-B612-010FE42CE63F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,6 +73,10 @@ Global
 		{6F9052AE-94A7-483A-ADA4-4CECA0989FF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F9052AE-94A7-483A-ADA4-4CECA0989FF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6F9052AE-94A7-483A-ADA4-4CECA0989FF1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCEB59C3-9842-49E8-B612-010FE42CE63F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCEB59C3-9842-49E8-B612-010FE42CE63F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCEB59C3-9842-49E8-B612-010FE42CE63F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCEB59C3-9842-49E8-B612-010FE42CE63F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -87,6 +93,7 @@ Global
 		{D2AF4716-BF9E-4596-AC39-56F4A1321151} = {0CE8B42F-CDD7-494A-8FC4-78250F6A2426}
 		{8F61C8C6-FC7D-49E2-AC8C-5AC1BB54A826} = {985BB401-C107-4C27-A67C-00A12CF8C6E8}
 		{6F9052AE-94A7-483A-ADA4-4CECA0989FF1} = {985BB401-C107-4C27-A67C-00A12CF8C6E8}
+		{DCEB59C3-9842-49E8-B612-010FE42CE63F} = {AFA4BBC3-F215-4137-8556-40D0FF3DF1AE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4EA48662-7197-462E-9D53-E779AFA11317}
