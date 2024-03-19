@@ -8,7 +8,7 @@ internal sealed class OwnerConfiguration : IEntityTypeConfiguration<Owner>
 {
     public void Configure(EntityTypeBuilder<Owner> builder)
     {
-        builder.ToTable(nameof(Owner));
+        //builder.ToTable(nameof(Owner));
 
         builder.HasKey(owner => owner.Id);
 

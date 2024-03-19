@@ -7,7 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddTransient<ExceptionHandlingMiddleware>();
-await ApplyMigrations(builder.Services);
+//await ApplyMigrations(builder.Services);
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -39,5 +39,5 @@ static async Task ApplyMigrations(IServiceProvider serviceProvider)
     using var scope = serviceProvider.CreateScope();
     await using RepositoryDbContext dbContext = scope.ServiceProvider.GetRequiredService<RepositoryDbContext>();
 
-    await dbContext.Database.MigrateAsync();
+    //await dbContext.Database.MigrateAsync();
 }

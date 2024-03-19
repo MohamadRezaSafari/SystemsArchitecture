@@ -1,91 +1,91 @@
-﻿using Services.Abstractions;
+﻿//using Services.Abstractions;
 
-namespace Services;
+//namespace Services;
 
-internal sealed class AccountService : IAccountService
-{
-    private readonly IRepositoryManager _repositoryManager;
+//internal sealed class AccountService : IAccountService
+//{
+//    private readonly IRepositoryManager _repositoryManager;
 
-    public AccountService(IRepositoryManager repositoryManager) => _repositoryManager = repositoryManager;
+//    public AccountService(IRepositoryManager repositoryManager) => _repositoryManager = repositoryManager;
 
-    public async Task<IEnumerable<AccountDto>> GetAllByOwnerIdAsync(Guid ownerId, CancellationToken cancellationToken = default)
-    {
-        var accounts = await _repositoryManager.AccountRepository.GetAllByOwnerIdAsync(ownerId, cancellationToken);
+//    public async Task<IEnumerable<AccountDto>> GetAllByOwnerIdAsync(Guid ownerId, CancellationToken cancellationToken = default)
+//    {
+//        var accounts = await _repositoryManager.AccountRepository.GetAllByOwnerIdAsync(ownerId, cancellationToken);
 
-        var accountsDto = accounts.Adapt<IEnumerable<AccountDto>>();
+//        var accountsDto = accounts.Adapt<IEnumerable<AccountDto>>();
 
-        return accountsDto;
-    }
+//        return accountsDto;
+//    }
 
-    public async Task<AccountDto> GetByIdAsync(Guid ownerId, Guid accountId, CancellationToken cancellationToken)
-    {
-        var owner = await _repositoryManager.OwnerRepository.GetByIdAsync(ownerId, cancellationToken);
+//    public async Task<AccountDto> GetByIdAsync(Guid ownerId, Guid accountId, CancellationToken cancellationToken)
+//    {
+//        var owner = await _repositoryManager.OwnerRepository.GetByIdAsync(ownerId, cancellationToken);
 
-        if (owner is null)
-        {
-            throw new OwnerNotFoundException(ownerId);
-        }
+//        if (owner is null)
+//        {
+//            throw new OwnerNotFoundException(ownerId);
+//        }
 
-        var account = await _repositoryManager.AccountRepository.GetByIdAsync(accountId, cancellationToken);
+//        var account = await _repositoryManager.AccountRepository.GetByIdAsync(accountId, cancellationToken);
 
-        if (account is null)
-        {
-            throw new AccountNotFoundException(accountId);
-        }
+//        if (account is null)
+//        {
+//            throw new AccountNotFoundException(accountId);
+//        }
 
-        if (account.OwnerId != owner.Id)
-        {
-            throw new AccountDoesNotBelongToOwnerException(owner.Id, account.Id);
-        }
+//        if (account.OwnerId != owner.Id)
+//        {
+//            throw new AccountDoesNotBelongToOwnerException(owner.Id, account.Id);
+//        }
 
-        var accountDto = account.Adapt<AccountDto>();
+//        var accountDto = account.Adapt<AccountDto>();
 
-        return accountDto;
-    }
+//        return accountDto;
+//    }
 
-    public async Task<AccountDto> CreateAsync(Guid ownerId, AccountForCreationDto accountForCreationDto, CancellationToken cancellationToken = default)
-    {
-        var owner = await _repositoryManager.OwnerRepository.GetByIdAsync(ownerId, cancellationToken);
+//    public async Task<AccountDto> CreateAsync(Guid ownerId, AccountForCreationDto accountForCreationDto, CancellationToken cancellationToken = default)
+//    {
+//        var owner = await _repositoryManager.OwnerRepository.GetByIdAsync(ownerId, cancellationToken);
 
-        if (owner is null)
-        {
-            throw new OwnerNotFoundException(ownerId);
-        }
+//        if (owner is null)
+//        {
+//            throw new OwnerNotFoundException(ownerId);
+//        }
 
-        var account = accountForCreationDto.Adapt<Account>();
+//        var account = accountForCreationDto.Adapt<Account>();
 
-        account.OwnerId = owner.Id;
+//        account.OwnerId = owner.Id;
 
-        _repositoryManager.AccountRepository.Insert(account);
+//        _repositoryManager.AccountRepository.Insert(account);
 
-        await _repositoryManager.UnitOfWork.SaveChangesAsync(cancellationToken);
+//        await _repositoryManager.UnitOfWork.SaveChangesAsync(cancellationToken);
 
-        return account.Adapt<AccountDto>();
-    }
+//        return account.Adapt<AccountDto>();
+//    }
 
-    public async Task DeleteAsync(Guid ownerId, Guid accountId, CancellationToken cancellationToken = default)
-    {
-        var owner = await _repositoryManager.OwnerRepository.GetByIdAsync(ownerId, cancellationToken);
+//    public async Task DeleteAsync(Guid ownerId, Guid accountId, CancellationToken cancellationToken = default)
+//    {
+//        var owner = await _repositoryManager.OwnerRepository.GetByIdAsync(ownerId, cancellationToken);
 
-        if (owner is null)
-        {
-            throw new OwnerNotFoundException(ownerId);
-        }
+//        if (owner is null)
+//        {
+//            throw new OwnerNotFoundException(ownerId);
+//        }
 
-        var account = await _repositoryManager.AccountRepository.GetByIdAsync(accountId, cancellationToken);
+//        var account = await _repositoryManager.AccountRepository.GetByIdAsync(accountId, cancellationToken);
 
-        if (account is null)
-        {
-            throw new AccountNotFoundException(accountId);
-        }
+//        if (account is null)
+//        {
+//            throw new AccountNotFoundException(accountId);
+//        }
 
-        if (account.OwnerId != owner.Id)
-        {
-            throw new AccountDoesNotBelongToOwnerException(owner.Id, account.Id);
-        }
+//        if (account.OwnerId != owner.Id)
+//        {
+//            throw new AccountDoesNotBelongToOwnerException(owner.Id, account.Id);
+//        }
 
-        _repositoryManager.AccountRepository.Remove(account);
+//        _repositoryManager.AccountRepository.Remove(account);
 
-        await _repositoryManager.UnitOfWork.SaveChangesAsync(cancellationToken);
-    }
-}
+//        await _repositoryManager.UnitOfWork.SaveChangesAsync(cancellationToken);
+//    }
+//}
