@@ -16,7 +16,15 @@ public class AssemblyHelper : IAssemblyDiscovery
 
     public IEnumerable<T> DiscoveryInstances<T>(string searchNamespace)
     {
-        throw new NotImplementedException();
+        var assemblyInstances = loadedAssemblies
+            .Where(i => i.FullName.StartsWith(searchNamespace))
+            .SelectMany(i => i.GetTypes())
+            .Where(i => i.IsClass && !i.IsAbstract)
+            .Where(i => i.GetInterface(typeof(T).Name) != null)
+            .Select(Activator.CreateInstance)
+            .OfType<T>();
+
+        return assemblyInstances;
     }
 
     private void LoadAssemblies(string assemblySearchPattern)
