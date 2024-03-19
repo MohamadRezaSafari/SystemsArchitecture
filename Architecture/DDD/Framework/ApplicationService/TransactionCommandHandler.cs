@@ -25,7 +25,7 @@ public class TransactionCommandHandler<TCommand> : ICommandHandler<TCommand> whe
             commandHandler.Execute(command);
             unitOfWork.Commit();
         }
-        catch (Exception)
+        catch (Exception e)
         {
             unitOfWork.Rollback();
             throw;
