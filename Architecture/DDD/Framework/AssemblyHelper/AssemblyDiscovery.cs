@@ -3,15 +3,26 @@ using System.Reflection;
 
 namespace Framework.AssemblyHelper;
 
-public class AssemblyHelper : IAssemblyDiscovery
+public class AssemblyDiscovery : IAssemblyDiscovery
 {
     private static List<Assembly> loadedAssemblies = null;
     private readonly string assemblySearchPattern;
 
-    public AssemblyHelper(string assemblySearchPattern)
+    public AssemblyDiscovery(string assemblySearchPattern)
     {
         this.assemblySearchPattern = assemblySearchPattern;
         LoadAssemblies(assemblySearchPattern);
+    }
+
+    public IEnumerable<Type> DiscoveryTypes<TInterface>(string searchNamespace)
+    {
+
+        return loadedAssemblies
+            .Where(a => a.FullName.StartsWith(searchNamespace))
+            .SelectMany(a => a.GetTypes())
+            .Where(t => t.IsClass && !t.IsAbstract)
+            .Where(t => t.GetInterface(typeof(TInterface).Name) != null)
+            .Select(t => t);
     }
 
     public IEnumerable<T> DiscoveryInstances<T>(string searchNamespace)

@@ -59,6 +59,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framework", "DDD\Framework\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReadModel", "DDD\ReadModel\ReadModel.csproj", "{E4F00FEA-B198-4A92-846B-5A49D7A6340B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WriteModel", "DDD\WriteModel\WriteModel.csproj", "{17095970-FEAC-44DA-9CB1-DCA061A25B24}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -137,6 +139,10 @@ Global
 		{E4F00FEA-B198-4A92-846B-5A49D7A6340B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E4F00FEA-B198-4A92-846B-5A49D7A6340B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E4F00FEA-B198-4A92-846B-5A49D7A6340B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17095970-FEAC-44DA-9CB1-DCA061A25B24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17095970-FEAC-44DA-9CB1-DCA061A25B24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17095970-FEAC-44DA-9CB1-DCA061A25B24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17095970-FEAC-44DA-9CB1-DCA061A25B24}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -165,6 +171,7 @@ Global
 		{FD69B143-3156-49F4-919C-DFDBC1761CE1} = {B42A48C2-9914-4875-82E1-1522E6AD3BC1}
 		{CE11BA01-EA29-4A4D-85D7-0692BF4D1D6C} = {1837C1EC-7C59-4576-A27C-2B11A332FFA0}
 		{E4F00FEA-B198-4A92-846B-5A49D7A6340B} = {1837C1EC-7C59-4576-A27C-2B11A332FFA0}
+		{17095970-FEAC-44DA-9CB1-DCA061A25B24} = {1837C1EC-7C59-4576-A27C-2B11A332FFA0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4EA48662-7197-462E-9D53-E779AFA11317}
