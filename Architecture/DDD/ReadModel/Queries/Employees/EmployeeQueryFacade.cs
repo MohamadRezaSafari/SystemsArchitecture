@@ -1,4 +1,5 @@
-﻿using Mapster;
+﻿using Framework.Facade;
+using Mapster;
 using Microsoft.EntityFrameworkCore;
 using ReadModel.Context;
 using ReadModel.Contracts.Employees;
@@ -6,7 +7,7 @@ using ReadModel.Contracts.Employees.DataContracts;
 
 namespace ReadModel.Queries.Employees;
 
-public class EmployeeQueryFacade : IEmployeeQueryFacade
+public class EmployeeQueryFacade : FacadeQueryBase, IEmployeeQueryFacade
 {
     private readonly DeveloperContext dbContext;
 
