@@ -3,7 +3,7 @@ using ReadModel.Context.Models;
 
 namespace ReadModel.Context;
 
-public class ReadModelContext : DbContext
+public partial class ReadModelContext : DbContext
 {
     public ReadModelContext()
     {
@@ -48,7 +48,8 @@ public class ReadModelContext : DbContext
                 .HasMaxLength(100);
         });
 
+        OnModelCreatingPartial(modelBuilder);
     }
 
-    //partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
+    partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 }

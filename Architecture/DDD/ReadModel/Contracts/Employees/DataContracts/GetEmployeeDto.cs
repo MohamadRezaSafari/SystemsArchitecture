@@ -1,3 +1,6 @@
-﻿namespace ReadModel.Contracts.Employees.DataContracts;
+﻿using System.Diagnostics;
 
-public record GetEmployeeDto(long id, string firstName, string lastName);
+namespace ReadModel.Contracts.Employees.DataContracts;
+
+[DebuggerDisplay("Employee {Id}: {FirstName} - {LastName}")]
+public record GetEmployeeDto(long Id, string FirstName, string LastName);
