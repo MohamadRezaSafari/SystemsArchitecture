@@ -9,9 +9,9 @@ namespace ReadModel.Queries.Employees;
 
 public class EmployeeQueryFacade : FacadeQueryBase, IEmployeeQueryFacade
 {
-    private readonly DeveloperContext dbContext;
+    private readonly ReadModelContext dbContext;
 
-    public EmployeeQueryFacade(DeveloperContext dbContext)
+    public EmployeeQueryFacade(ReadModelContext dbContext)
     {
         this.dbContext = dbContext;
     }

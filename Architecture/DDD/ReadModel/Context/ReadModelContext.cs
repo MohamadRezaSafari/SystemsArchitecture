@@ -3,17 +3,17 @@ using ReadModel.Context.Models;
 
 namespace ReadModel.Context;
 
-public class DeveloperContext : DbContext
+public class ReadModelContext : DbContext
 {
-    public DeveloperContext()
+    public ReadModelContext()
     {
-        
+
     }
 
-    public DeveloperContext(DbContextOptions<DeveloperContext> options)
+    public ReadModelContext(DbContextOptions<ReadModelContext> options)
         : base(options)
     {
-        
+
     }
 
     public virtual DbSet<Employee> Employees { get; set; }
@@ -23,7 +23,9 @@ public class DeveloperContext : DbContext
     {
         if (!optionsBuilder.IsConfigured)
         {
-            //optionsBuilder.UseSqlServer("Server=192.168.2.252;Database=HR_Developer;Trusted_Connection=True;User Id = saleadmin; Password = 123");
+            optionsBuilder
+                .UseSqlServer("Server=192.168.2.252;Database=HR_Developer;Trusted_Connection=True;User Id = saleadmin; Password = 123")
+                .AddInterceptors(new SlowQueryInterceptor());
         }
     }
 

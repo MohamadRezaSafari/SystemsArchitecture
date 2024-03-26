@@ -16,7 +16,7 @@ public class EmployeeCreateCommandHandler : ICommandHandler<EmployeeCreateComman
 
     public void Execute(EmployeeCreateCommand command)
     {
-        Employee employee = new Employee(employeeRepository, command.FirstName, command.LastName);
+        Employee employee = new Employee(command.FirstName, command.LastName);
 
         employeeRepository.Create(employee);
     }

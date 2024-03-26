@@ -8,8 +8,7 @@ public class Employee : EntityBase, IAggregateRoot
 {
     protected Employee() { }
 
-    public Employee(
-        IEmployeeRepository employeeRepository, 
+    public Employee( 
         string firstName, 
         string lastName)
     {
