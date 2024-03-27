@@ -61,7 +61,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReadModel", "DDD\ReadModel\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WriteModel", "DDD\WriteModel\WriteModel.csproj", "{17095970-FEAC-44DA-9CB1-DCA061A25B24}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API", "DDD\API\API.csproj", "{5F8D9A84-3F29-4BF8-A2F5-2BF8A5D8752C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API", "DDD\API\API.csproj", "{5F8D9A84-3F29-4BF8-A2F5-2BF8A5D8752C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Event-Driven", "Event-Driven", "{15179A05-4E00-4ABB-B702-B07B4CC25A99}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
